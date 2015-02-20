@@ -23,9 +23,9 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime;   
 
-    canvas.width = 505;
+    canvas.width = 605;
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
@@ -109,14 +109,15 @@ var Engine = (function(global) {
          */
         var rowImages = [
                 'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
+                'images/stone-block.png',   // Row 1 0f 4 of stone
+                'images/stone-block.png',   // Row 2 of 4 of stone
+                'images/stone-block.png',   // Row 3 of 4 of stone
+                'images/stone-block.png',   // Row 4 of 4 of stone
                 'images/grass-block.png',   // Row 1 of 2 of grass
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
-            numRows = 6,
-            numCols = 5,
+            numRows = 7,
+            numCols = 6,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
@@ -153,6 +154,7 @@ var Engine = (function(global) {
         });
 
         player.render();
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -160,8 +162,9 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+
     }
+    
 
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when
@@ -180,5 +183,7 @@ var Engine = (function(global) {
      * object when run in a browser) so that developer's can use it more easily
      * from within their app.js files.
      */
+     
+
     global.ctx = ctx;
 })(this);
